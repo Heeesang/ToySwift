@@ -7,20 +7,25 @@
 
 import UIKit
 import MapKit
+import Then
 
 class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    let myMap = MapView()
-    
-    override func loadView() {
-        view = myMap
-    }
+    private let myMap = MKMapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setMapConstraints()
         
-        myMap.map.delegate = self
-        myMap.map.setRegion(MKCoordinateRegion(center: 0, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
+    }
+    
+    private func setMapConstraints() {
+        view.addSubview(myMap)
+        myMap.translatesAutoresizingMaskIntoConstraints = false
+        myMap.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        myMap.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        myMap.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        myMap.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
     }
     
 }

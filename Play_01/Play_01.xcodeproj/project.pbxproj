@@ -12,7 +12,7 @@
 		0580F506284B372B002D63B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0580F505284B372B002D63B2 /* Assets.xcassets */; };
 		0580F509284B372B002D63B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0580F507284B372B002D63B2 /* LaunchScreen.storyboard */; };
 		0580F511284B3D39002D63B2 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0580F510284B3D39002D63B2 /* MainVC.swift */; };
-		05BDFF9E284F92CC0073834D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BDFF9D284F92CC0073834D /* MapView.swift */; };
+		05BE94DD28502954003C8E93 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 05BE94DC28502954003C8E93 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,6 @@
 		0580F508284B372B002D63B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0580F50A284B372B002D63B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0580F510284B3D39002D63B2 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		05BDFF9D284F92CC0073834D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05BE94DD28502954003C8E93 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,6 @@
 		0580F4FB284B372A002D63B2 /* Play_01 */ = {
 			isa = PBXGroup;
 			children = (
-				05BDFF9D284F92CC0073834D /* MapView.swift */,
 				0580F510284B3D39002D63B2 /* MainVC.swift */,
 				0580F4FC284B372A002D63B2 /* AppDelegate.swift */,
 				0580F4FE284B372A002D63B2 /* SceneDelegate.swift */,
@@ -83,6 +82,9 @@
 			dependencies = (
 			);
 			name = Play_01;
+			packageProductDependencies = (
+				05BE94DC28502954003C8E93 /* Then */,
+			);
 			productName = Play_01;
 			productReference = 0580F4F9284B372A002D63B2 /* Play_01.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +113,9 @@
 				Base,
 			);
 			mainGroup = 0580F4F0284B372A002D63B2;
+			packageReferences = (
+				05BE94DB28502954003C8E93 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 0580F4FA284B372A002D63B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +143,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0580F511284B3D39002D63B2 /* MainVC.swift in Sources */,
-				05BDFF9E284F92CC0073834D /* MapView.swift in Sources */,
 				0580F4FD284B372A002D63B2 /* AppDelegate.swift in Sources */,
 				0580F4FF284B372A002D63B2 /* SceneDelegate.swift in Sources */,
 			);
@@ -350,6 +354,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		05BE94DB28502954003C8E93 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		05BE94DC28502954003C8E93 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 05BE94DB28502954003C8E93 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0580F4F1284B372A002D63B2 /* Project object */;
 }
