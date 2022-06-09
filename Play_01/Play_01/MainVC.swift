@@ -8,14 +8,28 @@
 import UIKit
 import MapKit
 import Then
+import CoreLocation
 
-class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MainVC: UIViewController, CLLocationManagerDelegate {
     
-    private let myMap = MKMapView()
+    let myMap = MKMapView()
+    let locationManager = CLLocationManager()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setMapConstraints()
+        
+        
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        myMap.showsUserLocation = true
+       
+        
         
     }
     
