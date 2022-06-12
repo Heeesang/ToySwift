@@ -10,26 +10,26 @@ import UIKit
 
 class MainVC: UIViewController{
 
-    private var customCollectionView = CustomCollectionView().then {
-        $0.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CustomCollectionViewCell")
-    }
+    private var customCollectionView: CustomCollectionView!
     private let data = Data()
      
      override func viewDidLoad() {
          super.viewDidLoad()
          
-         self.customCollectionView.delegate = self
-         self.customCollectionView.dataSource = self
-         
-         self.view.addSubview(customCollectionView)
-         
          customCollectionView = CustomCollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
          customCollectionView.translatesAutoresizingMaskIntoConstraints = false
          customCollectionView.backgroundColor = .white
+         self.view.addSubview(customCollectionView)
          customCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120).isActive = true
          customCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
          customCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
          customCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
+         
+         self.customCollectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CollectionViewCell")
+         
+         self.customCollectionView.delegate = self
+         self.customCollectionView.dataSource = self
+         
      }
     
 }
@@ -41,7 +41,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
             
             cell.backgroundColor = .lightGray
             cell.nameLabel.text = data.memberName[indexPath.row]
