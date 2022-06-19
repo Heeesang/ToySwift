@@ -6,7 +6,25 @@
 //
 
 import UIKit
+import SnapKit
+import Then
+import Kingfisher
 
 class DemoCell: UICollectionViewCell {
+    
+    private let movieImageView = UIImageView()
+    private let movieTitleLabel = UILabel()
+    
+    
+    func layout() {
+        self.addSubview(movieImageView)
+        self.addSubview(movieTitleLabel)
+        
+        movieImageView.snp.makeConstraints {
+            $0.width.equalTo(100)
+            $0.height.equalTo(130)
+        }
+        
+    }
     
 }
