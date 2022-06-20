@@ -25,6 +25,10 @@ class DemoCell: UICollectionViewCell {
             $0.height.equalTo(130)
         }
         
+        movieTitleLabel.snp.makeConstraints {
+            $0.top.equalTo(movieImageView.snp.bottom).offset(10)
+        }
+        
     }
     
 }
